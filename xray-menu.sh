@@ -1,8 +1,4 @@
 #!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
-#########################
-
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
@@ -45,6 +41,7 @@ add_ssh() {
     echo -e "Username       : $Login "
     echo -e "Password       : $Pass"
     echo -e "Expired On     : $exp"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "IP Server      : $IP"
     echo -e "Host           : ${domain}"
     echo -e "OpenSSH        : 22"
@@ -55,18 +52,6 @@ add_ssh() {
     echo -e "OpenVPN        : UDP $ovpn2 http://$IP:81/client-udp-$ovpn2.ovpn"
     echo -e "OpenVPN        : SSL 442 http://$IP:81/client-tcp-ssl.ovpn"
     echo -e "badvpn         : 7100-7300"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "🔰Pantang Larang PREMIUM VPN !! "
-    echo -e "Aktiviti Berikut Adalah Dilarang "
-    echo -e "(ID akan di ban tanpa notis & tiada refund)"
-    echo -e "❌  Torrent (p2p, streaming p2p) "
-    echo -e "❌  PS4 "
-    echo -e "❌  Porn "
-    echo -e "❌  Ddos Server "
-    echo -e "❌  Mining Bitcoins "
-    echo -e "❌  Abuse Usage (1TB/DAY) "
-    echo -e "❌  Multi-Login ID (1 ID 1DEVICE SAHAJA) "
-    echo -e "❌  Sharing Premium Config "
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     read -n 1 -s -r -p "Press any key to back on menu"
     menu
@@ -182,7 +167,7 @@ check_ssh() {
     echo "-----=[ OpenSSH User Login ]=-----"
     echo "ID  |  Username  |  IP Address"
     echo ""
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━���━━━━━━━━━━━━━━━━━\033[0m"
     cat $LOG | grep -i sshd | grep -i "Accepted password for" >/tmp/login-db.txt
     data=($(ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'))
 
@@ -341,18 +326,6 @@ EOF
     echo -e " Port TLS           : $multi"
     echo -e " Port Non TLS       : $none"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "🔰Pantang Larang PREMIUM VPN !! "
-    echo -e "Aktiviti Berikut Adalah Dilarang "
-    echo -e "(ID akan di ban tanpa notis & tiada refund)"
-    echo -e "❌  Torrent (p2p, streaming p2p) "
-    echo -e "❌  PS4 "
-    echo -e "❌  Porn "
-    echo -e "❌  Ddos Server "
-    echo -e "❌  Mining Bitcoins "
-    echo -e "❌  Abuse Usage (1TB/DAY) "
-    echo -e "❌  Multi-Login ID (1 ID 1DEVICE SAHAJA) "
-    echo -e "❌  Sharing Premium Config "
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "VMess TLS : "
     echo ""
     echo "$vmesslink1"
@@ -415,18 +388,6 @@ EOF
     echo -e " Port TLS           : $multi"
     echo -e " Port Non TLS       : $none"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "🔰Pantang Larang PREMIUM VPN !! "
-    echo -e "Aktiviti Berikut Adalah Dilarang "
-    echo -e "(ID akan di ban tanpa notis & tiada refund)"
-    echo -e "❌  Torrent (p2p, streaming p2p) "
-    echo -e "❌  PS4 "
-    echo -e "❌  Porn "
-    echo -e "❌  Ddos Server "
-    echo -e "❌  Mining Bitcoins "
-    echo -e "❌  Abuse Usage (1TB/DAY) "
-    echo -e "❌  Multi-Login ID (1 ID 1DEVICE SAHAJA) "
-    echo -e "❌  Sharing Premium Config "
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "VLess TLS : "
     echo ""
     echo "$vlesslink1"
@@ -481,18 +442,6 @@ EOF
     echo -e " Expired date       : $exp"
     echo -e " Port TLS           : $multi"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "🔰Pantang Larang PREMIUM VPN !! "
-    echo -e "Aktiviti Berikut Adalah Dilarang "
-    echo -e "(ID akan di ban tanpa notis & tiada refund)"
-    echo -e "❌  Torrent (p2p, streaming p2p) "
-    echo -e "❌  PS4 "
-    echo -e "❌  Porn "
-    echo -e "❌  Ddos Server "
-    echo -e "❌  Mining Bitcoins "
-    echo -e "❌  Abuse Usage (1TB/DAY) "
-    echo -e "❌  Multi-Login ID (1 ID 1DEVICE SAHAJA) "
-    echo -e "❌  Sharing Premium Config "
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "TRojan TCP TLS  : "
     echo ""
     echo "$tro"
@@ -544,18 +493,6 @@ EOF
     echo -e " Username           : $user"
     echo -e " Expired date       : $exp"
     echo -e " Port TLS           : $multi"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "🔰Pantang Larang PREMIUM VPN !! "
-    echo -e "Aktiviti Berikut Adalah Dilarang "
-    echo -e "(ID akan di ban tanpa notis & tiada refund)"
-    echo -e "❌  Torrent (p2p, streaming p2p) "
-    echo -e "❌  PS4 "
-    echo -e "❌  Porn "
-    echo -e "❌  Ddos Server "
-    echo -e "❌  Mining Bitcoins "
-    echo -e "❌  Abuse Usage (1TB/DAY) "
-    echo -e "❌  Multi-Login ID (1 ID 1DEVICE SAHAJA) "
-    echo -e "❌  Sharing Premium Config "
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "Splice : "
     echo ""
@@ -927,7 +864,7 @@ backup_vps() {
     ##############++++++++++++++++++++++++#############
     LLatest=$(date)
     Get_Data() {
-        git clone https://github.com/bracoli/user-backup-db.git /root/user-backup/ &>/dev/null
+        git clone https://github.com/syfqsamvpn/user-backup-db.git /root/user-backup/ &>/dev/null
     }
 
     Mkdir_Data() {
@@ -946,15 +883,15 @@ last-backup : $LLatest
 
     Save_And_Exit() {
         cd /root/user-backup
-        git config --global user.email "khafiz532@gmail.com" &>/dev/null
-        git config --global user.name "bracoli" &>/dev/null
+        git config --global user.email "syfqpubg5@gmail.com" &>/dev/null
+        git config --global user.name "syfqsamvpn" &>/dev/null
         rm -rf .git &>/dev/null
         git init &>/dev/null
         git add . &>/dev/null
         git commit -m m &>/dev/null
         git branch -M main &>/dev/null
-        git remote add origin https://github.com/bracoli/user-backup-db
-        git push -f https://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@github.com/bracoli/user-backup-db.git &>/dev/null
+        git remote add origin https://github.com/syfqsamvpn/user-backup-db
+        git push -f https://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@github.com/syfqsamvpn/user-backup-db.git &>/dev/null
     }
 
     if [ ! -d "/root/user-backup/" ]; then
@@ -969,7 +906,7 @@ last-backup : $LLatest
         echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
         Save_And_Exit
     fi
-    link="https://raw.githubusercontent.com/bracoli/user-backup-db/main/$Name/$Name.zip"
+    link="https://raw.githubusercontent.com/syfqsamvpn/user-backup-db/main/$Name/$Name.zip"
     sleep 1
     echo -e "[ ${green}INFO${NC} ] Backup done "
     sleep 1
@@ -1040,9 +977,6 @@ restore_vps() {
 
 Name=$(curl -sS https://raw.githubusercontent.com/GH-reyz/registerv4/main/ip | grep $MYIP | awk '{print $2}')
 Exp=$(curl -sS https://raw.githubusercontent.com/GH-reyz/registerv4/main/ip | grep $MYIP | awk '{print $3}')
-IPVPS=$(curl -s icanhazip.com)
-DOMAIN=$(cat /etc/v2ray/domain)
-ISP=$(curl -sS ip-api.com | grep -w "isp" | awk '{print $3,$4,$5,$6,$7,$8,$9}' | cut -d'"' -f2 | cut -d',' -f1 | tee -a /etc/afak.conf)
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 
 chck_pid() {
@@ -1058,62 +992,56 @@ menu_sts() {
     fi
 }
 clear
-echo -e ""
-echo -e "\033[0;34m ╔═╗┬─┐┌─┐┌┬┐┬┬ ┬┌┬┐  ╔═╗┌─┐┬─┐┬┌─┐┌┬┐" 
-echo -e "\033[0;34m ╠═╝├┬┘├┤ │││││ ││││  ╚═╗│  ├┬┘│├─┘ │" 
-echo -e "\033[0;34m ╩  ┴└─└─┘┴ ┴┴└─┘┴ ┴  ╚═╝└─┘┴└─┴┴   ┴ "                                                                                                  
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[44;1;39m               ⇱ • INFORMATION • ⇲                \E[0m"
+echo -e "\E[44;1;39m               ⇱ MULTIPORT MENU ⇲                 \E[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\e[0m IP VPS Number       : $IPVPS "
-echo -e "\e[0m Name : $Exp"
-echo -e "\e[0m ISP/Provider Name   : $ISP "
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[44;1;39m               ⇱ • MAIN MENU • ⇲                  \E[0m"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " [\e[33m•1\e[0m ] Add Ssh User"
-echo -e " [\e[33m•2\e[0m ] All Ssh User"
-echo -e " [\e[33m•3\e[0m ] Delete Ssh"
-echo -e " [\e[33m•4\e[0m ] Delete User Expired"
-echo -e " [\e[33m•5\e[0m ] Extend Ssh"
-echo -e " [\e[33m•6\e[0m ] Check User Login"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " [\e[33m•7\e[0m ] Add XRay VMess"
-echo -e " [\e[33m•8\e[0m ] Delete XRay VMess"
-echo -e " [\e[33m•9\e[0m ] Extend XRay Vmess"
-echo -e " [\e[33m•10\e[0m] Check User Login"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " [\e[33m•11\e[0m] Add XRay VLess"
-echo -e " [\e[33m•12\e[0m] Delete XRay VLess"
-echo -e " [\e[33m•13\e[0m] Extend XRay VLess"
-echo -e " [\e[33m•14\e[0m] Check User Login"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " [\e[33m•15\e[0m] Add XRay XTLS"
-echo -e " [\e[33m•16\e[0m] Delete XRay XTLS"
-echo -e " [\e[33m•17\e[0m] Extend XRay XTLS"
-echo -e " [\e[33m•18\e[0m] Check User Login"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " [\e[33m•19\e[0m] Add XRay Trojan"
-echo -e " [\e[33m•20\e[0m] Delete XRay TRojan"
-echo -e " [\e[33m•21\e[0m] Extend XRay TRojan"
-echo -e " [\e[33m•22\e[0m] Check User Login"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " [\e[33m•23\e[0m] Setup DNS"
-echo -e " [\e[33m•24\e[0m] Check DNS Region"
-echo -e " [\e[33m•25\e[0m] Change VPS Domain"
-echo -e " [\e[33m•26\e[0m] Change Service Port"
-echo -e " [\e[33m•27\e[0m] Restart All Service"
-echo -e " [\e[33m•28\e[0m] Check All Port"
-echo -e " [\e[33m•29\e[0m] Backup"
-echo -e " [\e[33m•30\e[0m] Restore"
-echo -e " [\e[33m•31\e[0m] BBR Menu"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " Premium Script By Reyz-V4 "
 menu_sts
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+echo -e " [\e[36m•1\e[0m ] Add Ssh User"
+echo -e " [\e[36m•2\e[0m ] All Ssh User"
+echo -e " [\e[36m•3\e[0m ] Delete Ssh"
+echo -e " [\e[36m•4\e[0m ] Delete User Expired"
+echo -e " [\e[36m•5\e[0m ] Extend Ssh"
+echo -e " [\e[36m•6\e[0m ] Check User Login"
+echo ""
+echo -e " [\e[36m•7\e[0m ] Add XRay VMess"
+echo -e " [\e[36m•8\e[0m ] Delete XRay VMess"
+echo -e " [\e[36m•9\e[0m ] Extend XRay Vmess"
+echo -e " [\e[36m•10\e[0m] Check User Login"
+echo -e ""
+echo -e " [\e[36m•11\e[0m] Add XRay VLess"
+echo -e " [\e[36m•12\e[0m] Delete XRay VLess"
+echo -e " [\e[36m•13\e[0m] Extend XRay VLess"
+echo -e " [\e[36m•14\e[0m] Check User Login"
+echo -e ""
+echo -e " [\e[36m•15\e[0m] Add XRay XTLS"
+echo -e " [\e[36m•16\e[0m] Delete XRay XTLS"
+echo -e " [\e[36m•17\e[0m] Extend XRay XTLS"
+echo -e " [\e[36m•18\e[0m] Check User Login"
+echo -e ""
+echo -e " [\e[36m•19\e[0m] Add XRay Trojan"
+echo -e " [\e[36m•20\e[0m] Delete XRay TRojan"
+echo -e " [\e[36m•21\e[0m] Extend XRay TRojan"
+echo -e " [\e[36m•22\e[0m] Check User Login"
+echo -e ""
+echo -e " [\e[36m•23\e[0m] Setup DNS"
+echo -e " [\e[36m•24\e[0m] Check DNS Region"
+echo -e " [\e[36m•25\e[0m] Change VPS Domain"
+echo -e " [\e[36m•26\e[0m] Change Service Port"
+echo -e " [\e[36m•27\e[0m] Restart All Service"
+echo -e " [\e[36m•28\e[0m] Check All Port"
+echo -e " [\e[36m•29\e[0m] Backup"
+echo -e " [\e[36m•30\e[0m] Restore"
+echo -e ""
+echo -e " [\e[36m•111\e[0m] BOT PANEL"
 echo -e ""
 echo -e "Press x or [ Ctrl+C ] • To-Exit"
 echo -e ""
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "Client Name   : $Name"
+echo -e "Expiry script : $Exp"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
 read -p " Select menu : " opt
 echo -e ""
 case $opt in
@@ -1236,10 +1164,6 @@ case $opt in
 30)
     clear
     restore_vps
-    ;;
-31)
-    clear
-    tcp
     ;;
 111)
     clear
